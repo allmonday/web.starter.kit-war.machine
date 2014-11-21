@@ -10,15 +10,15 @@ WSK-War Machine ( Beta )
 
 帮助 WSK-War Machine
 --------------------
-***你不一定会在这儿找到令你惊讶的东西，但是我们需要你的热情！^_^***
+***你不一定会在这儿找到令你惊讶的东西，但是 `WSK-War Machine` 需要你的热情！^_^***
 
 #### WSK-War Machine 接下来要实现些什么?
 
-* 查看我们的动态（[Github Wiki](https://github.com/iTonyYo/web.starter.kit-war.machine/wiki '点击 · Click'), [Trello](https://trello.com/b/9jZa2tS7 '点击 · Click')）。
+* 你可以在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 和 [*Github Wiki*](https://github.com/iTonyYo/web.starter.kit-war.machine/wiki '点击 · Click') 上查看 `WSK-War Machine` 的开发、计划等动态，我们在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 上头更多地会进行各种讨论、信息收集等活动。
 
 #### 发现BUG!!!
 
-如果你发现一些总是出现的问题，无论是在访问网站时发现，亦或是在查看我们的代码时发现，可以在 [Github Issues](https://github.com/iTonyYo/web.starter.kit-war.machine/issues '点击 · Click') 上查看、提出问题，并与我们展开讨论。[这儿]( '点击 · Click')是相关 `BUG` 定义、指定流程。
+如果你发现一些总是出现的问题，无论是在访问网站时发现，亦或是在查看我们的代码时发现，可以在 [Github Issues](https://github.com/iTonyYo/web.starter.kit-war.machine/issues '点击 · Click') 上查看是否存在相关特征描述的条目，如果不存在，我们欢迎你提出问题，并与我们展开讨论。[*这儿*]( '点击 · Click')是相关 `BUG` 的定义规范、创建流程及方式等。
 
 #### 我想帮忙一起写代码!!!
 
@@ -26,7 +26,7 @@ WSK-War Machine ( Beta )
 
 #### 我有一个想法，但是我不懂如何去编写程序!!!
 
-如果你在功能上或者其他方面有些自己的想法，请查阅我们在 [Trello](https://trello.com/b/9jZa2tS7 '点击 · Click') 上的面板是否已经存在相关的卡片。如果你的想法非常棒，面板上却没有相关明确内容，我们会通知你并将你的提议加入我们的功能储备，并尽可能去实现它！
+如果你在功能上或者其他方面有些自己的想法，请查阅 [Trello](https://trello.com/b/9jZa2tS7 '点击 · Click') 上的面板是否已经存在相关的卡片。如果你的想法非常棒，面板上却没有相关明确内容，我们会通知你并将你的提议加入功能储备，并竭尽可能尽快去实现它！
 
 
 
@@ -49,60 +49,17 @@ WSK-War Machine ( Beta )
 
 + [*CoffeeScript 指南*]( '点击 · Click')
 
-
-
-如何创建独属于你的拷贝
---------------------
-
-如果你已经在自己的电脑上安装并配置了上述[*开发依赖*](https://github.com/iTonyYo/web.starter.kit-war.machine#%E4%B8%BB%E8%A6%81%E5%BC%80%E5%8F%91%E4%BE%9D%E8%B5%96 '点击 · Click')，你可以克隆一份
-[*"web.starter.kit-war.machine" 主要镜像*](https://github.com/iTonyYo/web.starter.kit-war.machine '点击 · Click') 副本至指定文件目录：
-
-```bash
-git clone https://github.com/iTonyYo/web.starter.kit-war.machine.git
-```
-
-你也可以使用 [*Github for Windows*](https://windows.github.com '点击 · Click') 或者 [*GitHub for Mac*](https://mac.github.com '点击 · Click') 客户端从
-[*"web.starter.kit-war.machine" 主要镜像*](https://github.com/iTonyYo/web.starter.kit-war.machine '点击 · Click') 位置克隆一份副本。
-
-克隆完全后，进入 "web.starter.kit-war.machine" 文件夹，安装所有基于 [*Gulp*](http://gulpjs.com/ '点击 · Click') 的开发依赖：
-
-```bash
-npm install
-```
-
-如果你是在 Mac 等系统上操作，需要提升操作权限：
-
-```bash
-sudo npm install
-```
-
-如果你所处网络环境访问外网存在不稳定的情况且没法儿使用 VPN 访问相关国外代理服务器，那么你可以通过国内 [TAONPM](http://npm.taobao.org/ '点击 · Click') 安装所有模块：
-
-```bash
-npm install --registry=https://registry.npm.taobao.org
-```
-
-如果你需要在安装的过程中输出相关安装日志，可在上述命令后添加 `-d` 或 `-dd` 或 `-ddd`。
-
-安装完所有基于 [*Gulp*](http://gulpjs.com/ '点击 · Click') 的开发依赖后，从 [*Bower*]http://bower.io/ '点击 · Click') 安装相关静态资源依赖：
-
-```bash
-bower install
-```
-
-如果你是在 Mac 等系统上操作，需要提升操作权限：
-
-```bash
-sudo bower install
-```
-
-至此，所有开发依赖就安装完了。运行 [*./tool/build.gulpfile.bat*](https://github.com/iTonyYo/web.starter.kit-war.machine/tree/master/tool '点击 · Click') 生成 `gulpfile.js` 文件，不要关闭打开的命令行界面，这样的话你每次对 `gulpfile.coffee` 的修改都会被实时生成至 `gulpfile.js`。新打开一个命令行界面，输入下述命令（具体参阅 [**](https://github.com/iTonyYo/web.starter.kit-war.machine#%E4%B8%BB%E8%A6%81%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1 '点击 · Click')）**开始编辑这个工程**：
-
-```bash
-gulp
-```
-
-接下来也许（或不）你会需要阅读 [*《如何协作 & 贡献》*]( '点击 · Click') ！^_^
+> 参阅
+ [*GitHub's CSS*](http://markdotto.com/2014/07/23/githubs-css/ '点击 · Click'),
+ [*Refining The Way We Structure Our CSS At Trello*](http://blog.trello.com/refining-the-way-we-structure-our-css-at-trello/ '点击 · Click'),
+ [*Medium’s CSS is actually pretty f***ing good.*](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06 '点击 · Click'),
+ [*CodePen's CSS*](http://codepen.io/chriscoyier/blog/codepens-css '点击 · Click'),
+ [*CSS at Lonely Planet*](http://ianfeather.co.uk/css-at-lonely-planet/ '点击 · Click'),
+ [*Buffer’s CSS*](http://blog.brianlovin.com/buffers-css/ '点击 · Click'),
+ [*CSS at Groupon*](http://mikeaparicio.com/2014/08/10/css-at-groupon/ '点击 · Click'),
+ [*CSS Guidelines*](http://cssguidelin.es/ '点击 · Click'),
+ [*How we do CSS at Ghost*](http://dev.ghost.org/css-at-ghost/ '点击 · Click'),
+ [*Website Style Guide Resources*](http://styleguides.io/ '点击 · Click')
 
 
 
@@ -246,12 +203,67 @@ gulp cmprs
 
 
 
-贡献者清单
----------
+如何创建独属于你的拷贝
+--------------------
+
+如果你已经在自己的电脑上安装并配置了上述[*开发依赖*](https://github.com/iTonyYo/web.starter.kit-war.machine#%E4%B8%BB%E8%A6%81%E5%BC%80%E5%8F%91%E4%BE%9D%E8%B5%96 '点击 · Click')，你可以克隆一份
+[*"web.starter.kit-war.machine" 主要镜像*](https://github.com/iTonyYo/web.starter.kit-war.machine '点击 · Click') 副本至指定文件目录：
+
+```bash
+git clone https://github.com/iTonyYo/web.starter.kit-war.machine.git
+```
+
+你也可以使用 [*Github for Windows*](https://windows.github.com '点击 · Click') 或者 [*GitHub for Mac*](https://mac.github.com '点击 · Click') 客户端从
+[*"web.starter.kit-war.machine" 主要镜像*](https://github.com/iTonyYo/web.starter.kit-war.machine '点击 · Click') 位置克隆一份副本。
+
+克隆完全后，进入 "web.starter.kit-war.machine" 文件夹，安装所有基于 [*Gulp*](http://gulpjs.com/ '点击 · Click') 的开发依赖：
+
+```bash
+npm install
+```
+
+如果你是在 Mac 等系统上操作，需要提升操作权限：
+
+```bash
+sudo npm install
+```
+
+如果你所处网络环境访问外网存在不稳定的情况且没法儿使用 VPN 访问相关国外代理服务器，那么你可以通过国内 [TAONPM](http://npm.taobao.org/ '点击 · Click') 安装所有模块：
+
+```bash
+npm install --registry=https://registry.npm.taobao.org
+```
+
+如果你需要在安装的过程中输出相关安装日志，可在上述命令后添加 `-d` 或 `-dd` 或 `-ddd`。
+
+安装完所有基于 [*Gulp*](http://gulpjs.com/ '点击 · Click') 的开发依赖后，从 [*Bower*]http://bower.io/ '点击 · Click') 安装相关静态资源依赖：
+
+```bash
+bower install
+```
+
+如果你是在 Mac 等系统上操作，需要提升操作权限：
+
+```bash
+sudo bower install
+```
+
+至此，所有开发依赖就安装完了。运行 [*./tool/build.gulpfile.bat*](https://github.com/iTonyYo/web.starter.kit-war.machine/tree/master/tool '点击 · Click') 生成 `gulpfile.js` 文件，不要关闭打开的命令行界面，这样的话你每次对 `gulpfile.coffee` 的修改都会被实时生成至 `gulpfile.js`。新打开一个命令行界面，输入下述命令（具体参阅 [**](https://github.com/iTonyYo/web.starter.kit-war.machine#%E4%B8%BB%E8%A6%81%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1 '点击 · Click')）**开始编辑这个工程**：
+
+```bash
+gulp
+```
+
+接下来也许（或不）你会需要阅读 [*《如何协作 & 贡献》*]( '点击 · Click') ！^_^
+
+
+
+贡献者
+------
 ...
 
 
 
 许可证
------
+------
 ...
