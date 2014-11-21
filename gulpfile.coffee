@@ -70,9 +70,9 @@
 #
 #	Creation Date: 2014.11.14 11:03 PM ( Tony ).
 #
-#	Last Update: 2014.11.21 17:22 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
+#	Last Update: 2014.11.21 19:11 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
 #
-#	Music ( Custom ): .mp3    ...//TODO: If you are listenning some music, just write the name of songs.
+#	Music ( Custom ): Fireproof (One Direction).mp3    ...//TODO: If you are listenning some music, just write the name of songs.
 #
 #	License: ...//TODO: Give a license.
 #
