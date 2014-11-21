@@ -14,9 +14,9 @@
 
 				"coordinates": [
 
-					121.3955,
+					121.37807,
 
-					31.2181
+					31.27202
 
 				]
 
@@ -24,13 +24,13 @@
 
 			"properties": {
 
-				"企业": "车享平台 · 上海汽车集团股份有限公司",
+				"开发者": "沈维忠 ( Shen Weizhong / Tony Stark )",
 
-				"地址": "上海市长宁区华山路1568号财瑞大厦8楼&9楼",
+				"地址": "中国上海市普陀区真南路895弄南李苑24号401室",
 
 				"marker-size": "medium",
 
-				"marker-symbol": "commercial",
+				"marker-symbol": "warehouse",
 
 				"marker-color": "#ace"
 
