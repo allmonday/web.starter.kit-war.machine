@@ -40,41 +40,6 @@ WSK-War Machine ( Beta )
 
 
 
-主要开发规范
------------
-
-+ [*工程模板指南*]( '点击 · Click')
-
-+ [*文件夹及其结构指南*]( '点击 · Click')
-
-+ [*语义版本号规范*](http://semver.org/lang/zh-CN/ '点击 · Click')
-
-+ [*HTML 指南*]( '点击 · Click')
-
-+ [*Jade 指南*]( '点击 · Click')
-
-+ [*CSS 指南*]( '点击 · Click')
-
-+ [*Sass 指南*]( '点击 · Click')
-
-+ [*JavaScript 指南*]( '点击 · Click')
-
-+ [*CoffeeScript 指南*]( '点击 · Click')
-
-> 参阅
- [*《GitHub's CSS》*](http://markdotto.com/2014/07/23/githubs-css/ '点击 · Click'),
- [*《Refining The Way We Structure Our CSS At Trello》*](http://blog.trello.com/refining-the-way-we-structure-our-css-at-trello/ '点击 · Click'),
- [*《Medium’s CSS is actually pretty f***ing good.》*](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06 '点击 · Click'),
- [*《CodePen's CSS》*](http://codepen.io/chriscoyier/blog/codepens-css '点击 · Click'),
- [*《CSS at Lonely Planet》*](http://ianfeather.co.uk/css-at-lonely-planet/ '点击 · Click'),
- [*《Buffer’s CSS》*](http://blog.brianlovin.com/buffers-css/ '点击 · Click'),
- [*《CSS at Groupon》*](http://mikeaparicio.com/2014/08/10/css-at-groupon/ '点击 · Click'),
- [*《CSS Guidelines》*](http://cssguidelin.es/ '点击 · Click'),
- [*《How we do CSS at Ghost》*](http://dev.ghost.org/css-at-ghost/ '点击 · Click'),
- [*《Website Style Guide Resources》*](http://styleguides.io/ '点击 · Click')
-
-
-
 主要开发依赖
 -----------
 
@@ -151,6 +116,41 @@ npm --version
 ```bash
 bower --version
 ```
+
+
+
+主要开发规范
+-----------
+
++ [*工程模板指南*]( '点击 · Click')
+
++ [*文件夹及其结构指南*]( '点击 · Click')
+
++ [*语义版本号规范*](http://semver.org/lang/zh-CN/ '点击 · Click')
+
++ [*HTML 指南*]( '点击 · Click')
+
++ [*Jade 指南*]( '点击 · Click')
+
++ [*CSS 指南*]( '点击 · Click')
+
++ [*Sass 指南*]( '点击 · Click')
+
++ [*JavaScript 指南*]( '点击 · Click')
+
++ [*CoffeeScript 指南*]( '点击 · Click')
+
+> 参阅
+ [*《GitHub's CSS》*](http://markdotto.com/2014/07/23/githubs-css/ '点击 · Click'),
+ [*《Refining The Way We Structure Our CSS At Trello》*](http://blog.trello.com/refining-the-way-we-structure-our-css-at-trello/ '点击 · Click'),
+ [*《Medium’s CSS is actually pretty f***ing good.》*](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06 '点击 · Click'),
+ [*《CodePen's CSS》*](http://codepen.io/chriscoyier/blog/codepens-css '点击 · Click'),
+ [*《CSS at Lonely Planet》*](http://ianfeather.co.uk/css-at-lonely-planet/ '点击 · Click'),
+ [*《Buffer’s CSS》*](http://blog.brianlovin.com/buffers-css/ '点击 · Click'),
+ [*《CSS at Groupon》*](http://mikeaparicio.com/2014/08/10/css-at-groupon/ '点击 · Click'),
+ [*《CSS Guidelines》*](http://cssguidelin.es/ '点击 · Click'),
+ [*《How we do CSS at Ghost》*](http://dev.ghost.org/css-at-ghost/ '点击 · Click'),
+ [*《Website Style Guide Resources》*](http://styleguides.io/ '点击 · Click')
 
 
 
