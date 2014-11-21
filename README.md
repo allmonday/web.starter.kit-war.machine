@@ -44,6 +44,8 @@ WSK-War Machine ( Beta )
 
 + [*工程模板指南*]( '点击 · Click')
 
++ [*文件夹及其结构指南*]( '点击 · Click')
+
 + [*语义版本号规范*](http://semver.org/lang/zh-CN/ '点击 · Click')
 
 + [*HTML 指南*]( '点击 · Click')
