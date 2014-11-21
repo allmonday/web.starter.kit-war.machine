@@ -14,7 +14,7 @@ WSK-War Machine ( Beta )
 
 #### WSK-War Machine 接下来要实现些什么?
 
-* 你可以在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 和 [*Github Wiki*](https://github.com/iTonyYo/web.starter.kit-war.machine/wiki '点击 · Click') 上查看 `WSK-War Machine` 的开发、计划等动态，我们在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 上头更多地会进行各种讨论、信息收集等活动。
+你可以在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 和 [*Github Wiki*](https://github.com/iTonyYo/web.starter.kit-war.machine/wiki '点击 · Click') 上查看 `WSK-War Machine` 的开发、计划等动态，我们在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 上头更多地会进行各种讨论、信息收集等活动。
 
 #### 发现BUG!!!
 
@@ -236,7 +236,7 @@ npm install --registry=https://registry.npm.taobao.org
 
 如果你需要在安装的过程中输出相关安装日志，可在上述命令后添加 `-d` 或 `-dd` 或 `-ddd`。
 
-安装完所有基于 [*Gulp*](http://gulpjs.com/ '点击 · Click') 的开发依赖后，从 [*Bower*]http://bower.io/ '点击 · Click') 安装相关静态资源依赖：
+安装完所有基于 [*Gulp*](http://gulpjs.com/ '点击 · Click') 的开发依赖后，从 [*Bower*](http://bower.io/ '点击 · Click') 安装相关静态资源依赖：
 
 ```bash
 bower install
