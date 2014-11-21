@@ -14,19 +14,19 @@ WSK-War Machine ( Beta )
 
 #### WSK-War Machine 接下来要实现些什么?
 
-* 查看我们的动态（[Github Wiki]( '点击 · Click'), [Trello](https://trello.com/b/9jZa2tS7 '点击 · Click')）。
+* 查看我们的动态（[Github Wiki](https://github.com/iTonyYo/web.starter.kit-war.machine/wiki '点击 · Click'), [Trello](https://trello.com/b/9jZa2tS7 '点击 · Click')）。
 
 #### 发现BUG!!!
 
-如果你发现一些总是出现的问题，无论是在访问网站时发现，亦或是在查看我们的代码时发现，可以在 [Github Issues]( '点击 · Click') 上查看、提出问题，并与我们展开讨论。[这儿]( '点击 · Click')是相关 `BUG` 定义、指定流程。
+如果你发现一些总是出现的问题，无论是在访问网站时发现，亦或是在查看我们的代码时发现，可以在 [Github Issues](https://github.com/iTonyYo/web.starter.kit-war.machine/issues '点击 · Click') 上查看、提出问题，并与我们展开讨论。[这儿]( '点击 · Click')是相关 `BUG` 定义、指定流程。
 
 #### 我想帮忙一起写代码!!!
 
-那真的是太棒了！！！请查看 [*《如何创建独属于你的拷贝》*]( '点击 · Click')！
+那真的是太棒了！！！请查看 [*《如何创建独属于你的拷贝》*](https://github.com/iTonyYo/web.starter.kit-war.machine#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%8B%AC%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%8B%B7%E8%B4%9D '点击 · Click')！
 
 #### 我有一个想法，但是我不懂如何去编写程序!!!
 
-如果你在功能上或者其他方面有些自己的想法，请查阅我们在 [Trello]( '点击 · Click') 上的面板是否已经存在相关的卡片。如果你的想法非常棒，面板上却没有相关明确内容，我们会通知你并将你的提议加入我们的功能储备，并尽可能去实现它！
+如果你在功能上或者其他方面有些自己的想法，请查阅我们在 [Trello](https://trello.com/b/9jZa2tS7 '点击 · Click') 上的面板是否已经存在相关的卡片。如果你的想法非常棒，面板上却没有相关明确内容，我们会通知你并将你的提议加入我们的功能储备，并尽可能去实现它！
 
 
 
@@ -194,15 +194,15 @@ gulp cmprs
 如何创建独属于你的拷贝
 --------------------
 
-如果你已经在自己的电脑上安装并配置了上述[*开发依赖*]( '点击 · Click')，你可以克隆一份
-[*"web.starter.kit-war.machine" 主要镜像*]( '点击 · Click') 副本至指定文件目录：
+如果你已经在自己的电脑上安装并配置了上述[*开发依赖*](https://github.com/iTonyYo/web.starter.kit-war.machine#%E4%B8%BB%E8%A6%81%E5%BC%80%E5%8F%91%E4%BE%9D%E8%B5%96 '点击 · Click')，你可以克隆一份
+[*"web.starter.kit-war.machine" 主要镜像*](https://github.com/iTonyYo/web.starter.kit-war.machine '点击 · Click') 副本至指定文件目录：
 
 ```bash
-
+git clone https://github.com/iTonyYo/web.starter.kit-war.machine.git
 ```
 
 你也可以使用 [*Github for Windows*](https://windows.github.com '点击 · Click') 或者 [*GitHub for Mac*](https://mac.github.com '点击 · Click') 客户端从
-[*"web.starter.kit-war.machine" 主要镜像*]( '点击 · Click') 位置克隆一份副本。
+[*"web.starter.kit-war.machine" 主要镜像*](https://github.com/iTonyYo/web.starter.kit-war.machine '点击 · Click') 位置克隆一份副本。
 
 克隆完全后，进入 "web.starter.kit-war.machine" 文件夹，安装所有基于 [*Gulp*](http://gulpjs.com/ '点击 · Click') 的开发依赖：
 
@@ -236,7 +236,7 @@ bower install
 sudo bower install
 ```
 
-至此，所有开发依赖就安装完了。运行 [*./tool/build.gulpfile.bat*]('点击 · Click') 生成 `gulpfile.js` 文件，不要关闭打开的命令行界面，这样的话你每次对 `gulpfile.coffee` 的修改都会被实时生成至 `gulpfile.js`。新打开一个命令行界面，输入下述命令（具体参阅 [**]( '点击 · Click')）**开始编辑这个工程**：
+至此，所有开发依赖就安装完了。运行 [*./tool/build.gulpfile.bat*](https://github.com/iTonyYo/web.starter.kit-war.machine/tree/master/tool '点击 · Click') 生成 `gulpfile.js` 文件，不要关闭打开的命令行界面，这样的话你每次对 `gulpfile.coffee` 的修改都会被实时生成至 `gulpfile.js`。新打开一个命令行界面，输入下述命令（具体参阅 [**](https://github.com/iTonyYo/web.starter.kit-war.machine#%E4%B8%BB%E8%A6%81%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1 '点击 · Click')）**开始编辑这个工程**：
 
 ```bash
 gulp
