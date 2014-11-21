@@ -70,7 +70,7 @@
 #
 #	Creation Date: 2014.11.14 11:03 PM ( Tony ).
 #
-#	Last Update: 2014.11.21 19:11 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
+#	Last Update: 2014.11.22 01:20 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
 #
 #	Music ( Custom ): Fireproof (One Direction).mp3    ...//TODO: If you are listenning some music, just write the name of songs.
 #
@@ -105,6 +105,7 @@ $            = require('gulp-load-plugins')()
 #     .pipe $.if __args.env is 'dev', $.notify 'task!'
 #     .pipe $.if __args.cmprs, $.notify 'compressed!'
 #     return
+
 __args = parse_args process.argv.slice(2),
 
 	'string': ['env']
@@ -1085,7 +1086,7 @@ gulp.task 'default', (cb) ->
 
 	else
 
-		run_sequence ['connect', 'open', 'watch']
+		run_sequence ['connect', 'open', 'watch'], cb
 
 	return
 
