@@ -1,0 +1,87 @@
+//-
+	 _____             __                                                   ____                    __
+	/\  __`\          /\ \__  __                                           /\  _`\                 /\ \                                      /'\_/`\
+	\ \ \/\ \   _____ \ \ ,_\/\_\     ___     ___      ____                \ \ \L\ \  __       ___ \ \ \/'\       __        __       __     /\      \      __       ___       __        __       __   _ __
+	 \ \ \ \ \ /\ '__`\\ \ \/\/\ \   / __`\ /' _ `\   /',__\      _______   \ \ ,__//'__`\    /'___\\ \ , <     /'__`\    /'_ `\   /'__`\   \ \ \__\ \   /'__`\   /' _ `\   /'__`\    /'_ `\   /'__`\/\`'__\
+	  \ \ \_\ \\ \ \L\ \\ \ \_\ \ \ /\ \L\ \/\ \/\ \ /\__, `\    /\______\   \ \ \//\ \L\.\_ /\ \__/ \ \ \\`\  /\ \L\.\_ /\ \L\ \ /\  __/    \ \ \_/\ \ /\ \L\.\_ /\ \/\ \ /\ \L\.\_ /\ \L\ \ /\  __/\ \ \/
+	   \ \_____\\ \ ,__/ \ \__\\ \_\\ \____/\ \_\ \_\\/\____/    \/______/    \ \_\\ \__/.\_\\ \____\ \ \_\ \_\\ \__/.\_\\ \____ \\ \____\    \ \_\\ \_\\ \__/.\_\\ \_\ \_\\ \__/.\_\\ \____ \\ \____\\ \_\
+	    \/_____/ \ \ \/   \/__/ \/_/ \/___/  \/_/\/_/ \/___/                   \/_/ \/__/\/_/ \/____/  \/_/\/_/ \/__/\/_/ \/___L\ \\/____/     \/_/ \/_/ \/__/\/_/ \/_/\/_/ \/__/\/_/ \/___L\ \\/____/ \/_/
+	              \ \_\                                                                                                     /\____/                                                     /\____/
+	               \/_/                                                                                                     \_/__/                                                      \_/__/
+	@name 静态资源包取向、管理选项
+	@public
+	@var {string} pkg_opts 静态资源包取向、管理介质选择结果
+	@var {string} bower_dir 本地 Bower 仓库目录路径
+	@var {string} custom_storage_dir 本地自定义仓库目录路径
+	@var {string} online_storage_choice 线上CDN仓库选择
+	@var {string} online_storage_choice_dir 线上仓库目录路径
+	@author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+-var pkg_choice                = 'custom_storage'                  // 'bower', 'custom_storage', 'online_storage'
+
+-var bower_dir                 = 'bower_components/'
+
+-var custom_storage_dir        = 'public/ajax/lib/'
+
+-var online_storage_choice     = '//cdnjs.cloudflare.com/'
+
+-var online_storage_choice_dir = 'ajax/libs/require.js/2.1.15/'
+
+
+
+
+
+//-
+	 ____                             __
+	/\  _`\                          /\ \__  __
+	\ \ \L\_\ __  __    ___      ___ \ \ ,_\/\_\     ___     ___      ____
+	 \ \  _\//\ \/\ \ /' _ `\   /'___\\ \ \/\/\ \   / __`\ /' _ `\   /',__\
+	  \ \ \/ \ \ \_\ \/\ \/\ \ /\ \__/ \ \ \_\ \ \ /\ \L\ \/\ \/\ \ /\__, `\
+	   \ \_\  \ \____/\ \_\ \_\\ \____\ \ \__\\ \_\\ \____/\ \_\ \_\\/\____/
+	    \/_/   \/___/  \/_/\/_/ \/____/  \/__/ \/_/ \/___/  \/_/\/_/ \/___/
+
+//-
+	@name IE条件注释注入函数
+	@public
+	@param {string} sCondition 开始条件注释
+	@param {string} eCondition 结束条件注释
+	@example
+	// 输出：<!--[if lt IE 9]> <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/hover.css/1.0.8/css/hover-min.css"> <![endif]-->
+	+ie('if lt IE 9]', '[endif')
+		link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/hover.css/1.0.8/css/hover-min.css')
+	@author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+mixin ie (sCondition, eCondition)
+
+	|<!--[!{sCondition}>
+
+	block
+
+	|<!!{eCondition}]-->
+
+//-
+	@name 脚本加载器设定函数
+	@public
+	@borrows pkg_choice
+	@param {object} boot 目标文件在 " & 本地自定义仓库 & 线上仓库 " 的路径
+	@param {object} loader 目标文件在 " 本地 Bower 仓库 & 本地自定义仓库 & 线上仓库 " 的路径
+	@example
+	// 输出：<script data-main="public/ajax/lib/js/jade.starter.kit/index" src="../bower_components/requirejs/require.js"></script>
+	+setScriptLoader({custom_storage: 'index', online_storage: ''}, {bower: 'require.min.js', custom_storage: '', online_storage: ''})
+	@author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+mixin setScriptLoader (boot, loader)
+
+	case pkg_choice
+
+		when 'bower'
+
+			script(data-main= boot.custom_storage, src= loader.bower)
+
+		when 'custom_storage'
+
+			script(data-main= boot.custom_storage, src= loader.custom_storage)
+
+		when 'online_storage'
+
+			script(data-main= boot.custom_storage, src= loader.online_storage)

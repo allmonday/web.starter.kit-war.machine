@@ -1,0 +1,105 @@
+{
+
+	"name": "web.starter.kit-war.machine",
+
+	"version": "0.1.0",
+
+	"homepage": "",
+
+	"keywords": [
+
+		"gulp",
+
+		"轻量级混合工程模板"
+
+	],
+
+	"authors": [
+
+		{
+
+			"name": "沈维忠 ( Shen Weizhong / Tony Stark )",
+
+			"email": "swzyocowboy@icloud.com",
+
+			"url": "http://itonyyo.github.io/"
+
+		}
+
+	],
+
+	"repository": {
+
+		"type": "git",
+
+		"url": ""
+
+	},
+
+	"private": false,
+
+	"ignore": [
+
+		"app/bower_components",
+
+		"node_modules",
+
+		"test",
+
+		"tests",
+
+		"doc",
+
+		"gh-pages",
+
+		"grunt",
+
+		"app",
+
+		"dev",
+
+		".bowerrc",
+
+		"gulpfile.js",
+
+		".travis.yml",
+
+		".editorconfig",
+
+		".gitignore",
+
+		"bower.json",
+
+		"map.geojson"
+
+	],
+
+	"dependencies": {
+
+		"jquery_series_1": "jquery#1.11.1",
+
+		"jquery_series_2": "jquery#2.1.1",
+
+		"requirejs": "^2.1.15",
+
+		"reset-css": "^2.0.20110126",
+
+		"normalize_modern": "normalize.css#3.0.2",
+
+		"normalize_ancient": "normalize.css#1.1.3",
+
+		"animate.css": "^3.2.0",
+
+		"html5shiv": "^3.7.2",
+
+		"modernizr": "^2.8.3",
+
+		"WOW": "^1.0.2"
+
+	},
+
+	"devDependencies": {},
+
+	"licenses": "GPL-3.0+"
+
+}

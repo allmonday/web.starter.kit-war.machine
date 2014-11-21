@@ -1,0 +1,203 @@
+{
+
+	"path": {
+
+		"jade": {
+
+			"root": "dev/jade",
+
+			"master": "dev/jade/master",
+
+			"snippet": "dev/jade/snippet",
+
+			"ui": "dev/jade/ui",
+
+			"unit": "dev/jade/unit"
+
+		},
+
+		"html": "app",
+
+		"sass": {
+
+			"root": "dev/sass",
+
+			"wsk": "dev/sass/web.starter.kit-war.machine",
+
+			"wskf": "dev/sass/web.starter.kit-war.machine_framework",
+
+			"wskf_base": "dev/sass/web.starter.kit-war.machine_framework/base",
+
+			"wskf_component": "dev/sass/web.starter.kit-war.machine_framework/component",
+
+			"wskf_mq": "dev/sass/web.starter.kit-war.machine_framework/media_query",
+
+			"wskf_scaffolding": "dev/sass/web.starter.kit-war.machine_framework/scaffolding"
+
+		},
+
+		"css": {
+
+			"root": "app/public/ajax/lib/css",
+
+			"wsk": "app/public/ajax/lib/css/web.starter.kit-war.machine",
+
+			"wskf": "app/public/ajax/lib/css/web.starter.kit-war.machine_framework",
+
+			"wskf_base": "app/public/ajax/lib/css/web.starter.kit-war.machine_framework/base",
+
+			"wskf_component": "app/public/ajax/lib/css/web.starter.kit-war.machine_framework/component",
+
+			"wskf_mq": "app/public/ajax/lib/css/web.starter.kit-war.machine_framework/media_query",
+
+			"wskf_scaffolding": "app/public/ajax/lib/css/web.starter.kit-war.machine_framework/scaffolding",
+
+			"bower": "bower_component"
+
+		},
+
+		"coffeescript": {
+
+			"root": "dev/coffeescript",
+
+			"wsk": "dev/coffeescript/web.starter.kit-war.machine",
+
+			"wsk_logic": "dev/coffeescript/web.starter.kit-war.machine/logic",
+
+			"wsk_component": "dev/coffeescript/web.starter.kit-war.machine/component",
+
+			"wskf": "dev/coffeescript/web.starter.kit-war.machine_framework"
+
+		},
+
+		"javascript": {
+
+			"root": "app/public/ajax/lib/js",
+
+			"wsk": "app/public/ajax/lib/js/web.starter.kit-war.machine",
+
+			"wsk_logic": "app/public/ajax/lib/js/web.starter.kit-war.machine/logic",
+
+			"wsk_component": "app/public/ajax/lib/js/web.starter.kit-war.machine/component",
+
+			"wskf": "app/public/ajax/lib/js/web.starter.kit-war.machine_framework"
+
+		},
+
+		"image": {
+
+			"root": "app/public/ajax/lib/img",
+
+			"wsk": "app/public/ajax/lib/img/web.starter.kit-war.machine",
+
+			"wskf": "app/public/ajax/lib/img/web.starter.kit-war.machine_framework"
+
+		}
+
+	},
+
+	"notification": true,
+
+	"preview": {
+
+		"dir": "app",
+
+		"host": "localhost",
+
+		"port": 9022,
+
+		"livereload": true
+
+	},
+
+	"html_minification_opts": {
+
+		"empty": false,
+
+		"cdata": true,
+
+		"comments": false,
+
+		"conditionals": true,
+
+		"spare": false,
+
+		"quotes": true
+
+	},
+
+	"sass_opts": {
+
+		"sourcemap=none": true,
+
+		"style": "compressed",
+
+		"precision": 10
+
+	},
+
+	"coffee_opts": {
+
+		"bare": true
+
+	},
+
+	"uglify_opts": {
+
+		"mangle": {
+
+			"except": [
+
+				"require"
+
+			]
+
+		}
+
+	},
+
+	"message": {
+
+		"jade": "Jade 任务执行成功！",
+
+		"html": "页面预览成功！",
+
+		"minhtml": "HTML 压缩成功！",
+
+		"sass": "Sass 任务执行成功！",
+
+		"css_csso": "CSS 压缩（ CSSO ）成功成功！",
+
+		"css_uncss": "CSS 压缩（ UNCSS ）成功成功！",
+
+		"coffeescript": "CoffeeScript 预处理成功！",
+
+		"js_minification": "JavaScript 压缩成功成功！"
+
+	},
+
+	"manifest_list": [
+
+		"app/*.html",
+
+		"app/public/ajax/lib/css/web.starter.kit-war.machine/**/*.css",
+
+		"app/public/ajax/lib/css/web.starter.kit-war.machine_framework/**/*.css",
+
+		"app/public/ajax/lib/js/web.starter.kit-war.machine/**/*.js",
+
+		"app/public/ajax/lib/js/web.starter.kit-war.machine_framework/**/*.js",
+
+		"app/public/ajax/lib/img/**/*.png",
+
+		"app/public/ajax/lib/img/**/*.jpg",
+
+		"app/public/ajax/lib/img/**/*.gif",
+
+		"app/public/ajax/lib/img/**/*.svg",
+
+		"https://www.npmjs.org/stylus/index.css"
+
+	]
+
+}

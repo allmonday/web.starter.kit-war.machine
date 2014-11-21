@@ -1,0 +1,187 @@
+-var staticBase = '../../'
+
+-var staticBaseUrl = staticBase + 'public/ajax/libs/'
+
+-var staticCDNBaseUrl = '//resource.fenqimall.com/ajax/libs/'
+
+-var requirejs_version = '2.1.14'
+
+-var loaderUrl = staticCDNBaseUrl + 'js/requirejs/' + requirejs_version + '/require.min.js'
+
+mixin ie (sCondition, eCondition)
+
+	|<!--[!{sCondition}>
+
+	block
+
+	|<!!{eCondition}]-->
+
+mixin jsloader (cdn, boot)
+
+	if !cdn
+
+		script(data-main= staticBaseUrl + boot, src= loaderUrl)
+
+	else
+
+		script(data-main= staticCDNBaseUrl + boot, src= loaderUrl)
+
+mixin importCSS (cdn, specificUrl)
+
+	if !cdn
+
+		link(rel= 'stylesheet', href= staticBaseUrl + specificUrl)
+
+	else
+
+		link(rel= 'stylesheet', href= staticCDNBaseUrl + specificUrl)
+
+mixin importJS (cdn, specificUrl)
+
+	if !cdn
+
+		script(src= staticBaseUrl + specificUrl)
+
+	else
+
+		script(src= staticCDNBaseUrl + specificUrl)
+
+
+
+
+
+doctype html
+
+<!--[if IE 7]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="zh"><![endif]-->
+
+<!--[if IEMobile 7]><html class="no-js iem7" lang="zh" itemscope itemtype="http://schema.org/WebPage" manifest="../../manifest.appcache"><![endif]-->
+
+<!--[if IE 8]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="zh"><![endif]-->
+
+<!--[if IE 9]><html class="ie ie9 ie-lt10 no-js" lang="zh" itemscope itemtype="http://schema.org/WebPage"><![endif]-->
+
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)]><!-->
+html(class='ie-gt9 no-js', lang='zh', itemscope itemtype='http://schema.org/Organization')
+	<!--<![endif]-->
+	
+	head
+		
+		//
+			Maybe we can remove meta charset.
+			Use the server configs or sets the proper value for the HTTP header.
+			https://github.com/h5bp/html5-boilerplate/pull/1520
+		meta(charset='utf-8')
+		
+		meta(target='_self')
+		
+		block title
+		
+		// Pre-Resolve DNS Snippet
+		include ../snippet/pre.resolve.dns.jade
+		
+		// Offical: IE = EmulateIE7, IE = 10, IE = edge, chrome = 1
+		meta(http-equiv='X-UA-Compatible', content='ie = edge, chrome = 1')
+		
+		//
+			IOS Safari: Fixed in iOS 7.1 beta 2, A property, minimal-ui, has been added for 
+			the viewport meta tag key that allows minimizing the top and bottom bars on the 
+			iPhone as the page loads. While on a page using minimal-ui, tapping the top bar 
+			brings the bars back. Tapping back in the content dismisses them again. 
+			Reference, 
+			http://www.everythingicafe.com/forum/threads/lets-talk-ios-7-1-beta-2.104595/
+		meta(name='viewport', content='width = device-width, initial-scale = 1, minimal-ui')
+		
+		meta(name='HandheldFriendly', content='true')
+		
+		// Microsoft introduced the MobileOptimized tag for the PocketPC
+		meta(name='MobileOptimized', content='640')
+		
+		//
+			Mobile Internet Explorer allows us to activate ClearType technology for 
+			smoothing fonts for easy reading
+		meta(http-equiv='cleartype', content='on')
+		
+		link(rel='canonical', href='http://m.5i5dai.com/')
+		
+		meta(name='url', content='http://m.5i5dai.com/')
+		
+		meta(name='identifier-URL', content='http://m.5i5dai.com/')
+		
+		meta(name='linkage', content='http://m.5i5dai.com/')
+		
+		// production: content = "all"; development: content = "none".
+		meta(name='Robots', content='all')
+		
+		// production: content = "public"; development: content = "no-cache".
+		meta(http-equiv='cache-control', content='public')
+		
+		// production: content = "max-age"; development: content = "0".
+		meta(http-equiv='expires', content='max-age')
+		
+		meta(http-equiv='windows-Target', content='_top')
+		
+		// TODO[]: meta · keywords
+		meta(name='keywords', content='')
+		
+		// TODO[]: meta · description
+		meta(name='description', content='')
+		
+		// TODO[]: meta · copyright
+		meta(name='copyright', content='')
+		
+		// Site Icon
+		include ../snippet/site.icon.meta.jade
+		
+		// Apple Meta Tag
+		include ../snippet/apple.meta.jade
+		
+		link(rel='author', type='text/plain', href='../../humans.txt')
+		
+		// Public stylesheet snippet.
+		include ../snippet/public.stylesheet.jade
+		
+		// Private stylesheet snippet.
+		block private-stylesheet
+		
+		// Public script snippet.
+		include ../snippet/public.script.jade
+		
+		// Private javascript snippet which need to be put in the '<head/>' tag.
+		block private-head-javascript
+		
+	body
+
+		div.relative.row.wow.fadeInDown.pageHeader(itemscope itemtype='http://schema.org/WPHeader')
+
+			a(id='logo', class='absolute block text-indent touch-action logo', href='//store.apple.com/cn/', hreflang='zh', title='我爱我贷网 · 微站点 · 首页 · 亨元金融') 我爱我贷网 · 微站点 · 首页 · 亨元金融
+
+			a(id='siteNav', class='absolute block text-indent touch-action unselectable siteNav', href='#', hreflang='zh', title='我爱我贷网 · 微站点 · 导航 · 亨元金融') 我爱我贷网 · 微站点 · 导航 · 亨元金融
+		
+		block content
+
+		div.relative.row.wow.fadeInDown.pageFooter(itemscope itemtype='http://schema.org/WPFooter')
+
+			div.absolute
+
+				span(itemprop='provider') 亨元金融
+
+				| 旗下理财平台
+					
+		block private-body-script
+		
+		include ../snippet/google.analytics.jade
+
+
+// ___________  ______    _____  ___   ___  ___
+//("     _   ")/    " \  (\"   \|"  \ |"  \/"  |
+// )__/  \\__/// ____  \ |.\\   \    | \   \  /
+//	\\_ /  /  /    ) :)|: \.   \\  |  \\  \/
+//	|.  | (: (____/ // |.  \    \. |  /   /
+//	\:  |  \        /  |    \    \ | /   /
+//	 \__|   \"_____/    \___|\____\)|___/ 沈维忠 ( Shen Weizhong / Tony Stark ).
+//
+//* Version: 0.1.0-alpha
+//
+//* Creation Date: 2014.06.13 16:22 ( Tony ).
+//
+//* Last Update: 2014.06.29 19:08 ( Tony ).

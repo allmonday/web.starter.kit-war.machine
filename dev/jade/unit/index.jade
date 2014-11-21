@@ -1,0 +1,41 @@
+extends ../master/blank
+
+block title
+
+	title(itemprop='name') Jade Starter Kit
+
+block private-stylesheet
+
+block private-head-javascript
+
+block content
+
+	ul(style='color: #eaeaea; font-size: 58px;')
+
+		li JADE
+
+		li SASS
+
+		li COFFEESCRIPT
+
+		li BOWER
+
+		li GULP
+
+		li YEOMAN
+
+		li GIT
+
+		li TONY STARK
+
+		li NODEJS GEEK
+
+		li FUCKERS
+
+block private-body-script
+
+	-var _boot = {custom_storage: custom_storage_dir + 'js/web.starter.kit-war.machine/index', online_storage: ''}
+
+	-var _loader = {bower: bower_dir + 'requirejs/require.js', custom_storage: custom_storage_dir + 'js/requirejs/latest/require.min.js', online_storage: online_storage_choice + online_storage_choice_dir + 'require.min.js'}
+
+	+setScriptLoader(_boot, _loader)

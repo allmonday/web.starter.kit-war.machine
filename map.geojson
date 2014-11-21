@@ -1,0 +1,43 @@
+{
+
+	"type": "FeatureCollection",
+
+	"features": [
+
+		{
+
+			"type": "Feature",
+
+			"geometry": {
+
+				"type": "Point",
+
+				"coordinates": [
+
+					121.3955,
+
+					31.2181
+
+				]
+
+			},
+
+			"properties": {
+
+				"企业": "车享平台 · 上海汽车集团股份有限公司",
+
+				"地址": "上海市长宁区华山路1568号财瑞大厦8楼&9楼",
+
+				"marker-size": "medium",
+
+				"marker-symbol": "commercial",
+
+				"marker-color": "#ace"
+
+			}
+
+		}
+
+	]
+
+}
