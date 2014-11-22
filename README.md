@@ -8,35 +8,9 @@ WSK-War Machine ( Beta )
 
 
 
-帮助 WSK-War Machine
---------------------
-***你不一定会在这儿找到令你惊讶的东西，但是 `WSK-War Machine` 需要你的热情！^_^***
+快速开始
+--------
 
-#### WSK-War Machine 接下来要实现些什么?
-
-你可以在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 和
- [*Github Wiki*](https://github.com/iTonyYo/web.starter.kit-war.machine/wiki '点击 · Click')
- 上查看 `WSK-War Machine` 的开发、计划等动态，我们在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click')
- 上头更多地会进行各种讨论、信息收集等活动。
-
-#### 发现 BUG!!!
-
-如果你发现一些总是出现的问题，无论是在访问网站时发现，亦或是在查看我们的代码时发现，可以在
- [*Github Issues*](https://github.com/iTonyYo/web.starter.kit-war.machine/issues '点击 · Click')
- 上查看是否存在相关特征描述的条目，如果不存在，我们欢迎你提出问题，并与我们展开讨论。[*这儿*]( '点击 · Click')
- 是相关 `BUG` 的定义规范、创建流程及方式等。
-
-#### 我想帮忙一起写代码!!!
-
-那真的是太棒了！！！请查看
- [*《如何创建独属于你的拷贝》*](#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%8B%AC%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%8B%B7%E8%B4%9D '点击 · Click')！
-
-#### 我有一个想法，但是我不懂如何去编写程序!!!
-
-如果你在功能上或者其他方面有些自己的想法，请查阅
- [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click')
- 上的面板是否已经存在相关的卡片。如果你的想法非常棒，面板上却没有相关明确内容，欢迎你通过各种例举、论证的方式阐述自己的想法，
-我们看到后会通知你、将你的提议加入功能储备，并竭尽可能尽快去实现它！
 
 
 
@@ -165,6 +139,14 @@ bower --version
 
 - [x] 使用 `Sass` 预处理 `CSS`；
 
+- [ ] 生成 `CSS Sprites` 及相关样式表文件；
+
+- [ ] 将 `CSS` 中关的联图片的路径判断性替换成 `Data URI`；
+
+- [ ] 合并公共 / 页面独有样式表文件；
+
+- [ ] 针对 `CSS` 样式表文件作语法、规范的检测；
+
 - [x] 压缩 `CSS` 样式表文件；
 
 - [x] 使用 `UNCSS` 移除页面相关样式表内未应用的 `CSS` 内容（选择器）;
@@ -173,7 +155,15 @@ bower --version
 
 - [x] 使用 `CoffeeScript` 预处理 `JavaScript`；
 
+- [ ] 针对 `JavaScript` 脚本文件作语法、规范的检测；
+
 - [x] 压缩 `JavaScript` 脚本文件；
+
+- [ ] 合并公共 / 页面独有脚本文件；
+
+- [ ] 压缩 `SVG` 图片文件；
+
+- [ ] 将多个 `SVG` 图标转换成 `SVG` 字体文件；
 
 - [x] 生成、更新 `HTML5` 应用缓存清单文件；
 
@@ -296,6 +286,38 @@ gulp
 ```
 
 接下来也许（或不）你会需要阅读 *《 [如何协作 & 贡献]( '点击 · Click') 》* ！^_^
+
+
+
+帮助 WSK-War Machine
+--------------------
+***你不一定会在这儿找到令你惊讶的东西，但是 `WSK-War Machine` 需要你的热情！^_^***
+
+#### WSK-War Machine 接下来要实现些什么?
+
+你可以在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click') 和
+ [*Github Wiki*](https://github.com/iTonyYo/web.starter.kit-war.machine/wiki '点击 · Click')
+ 上查看 `WSK-War Machine` 的开发、计划等动态，我们在 [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click')
+ 上头更多地会进行各种讨论、信息收集等活动。
+
+#### 发现 BUG!!!
+
+如果你发现一些总是出现的问题，无论是在访问网站时发现，亦或是在查看我们的代码时发现，可以在
+ [*Github Issues*](https://github.com/iTonyYo/web.starter.kit-war.machine/issues '点击 · Click')
+ 上查看是否存在相关特征描述的条目，如果不存在，我们欢迎你提出问题，并与我们展开讨论。[*这儿*]( '点击 · Click')
+ 是相关 `BUG` 的定义规范、创建流程及方式等。
+
+#### 我想帮忙一起写代码!!!
+
+那真的是太棒了！！！请查看
+ [*《如何创建独属于你的拷贝》*](#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%8B%AC%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%8B%B7%E8%B4%9D '点击 · Click')！
+
+#### 我有一个想法，但是我不懂如何去编写程序!!!
+
+如果你在功能上或者其他方面有些自己的想法，请查阅
+ [*Trello*](https://trello.com/b/9jZa2tS7 '点击 · Click')
+ 上的面板是否已经存在相关的卡片。如果你的想法非常棒，面板上却没有相关明确内容，欢迎你通过各种例举、论证的方式阐述自己的想法，
+我们看到后会通知你、将你的提议加入功能储备，并竭尽可能尽快去实现它！
 
 
 
