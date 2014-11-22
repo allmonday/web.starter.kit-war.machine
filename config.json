@@ -2,6 +2,8 @@
 
 	"path": {
 
+		"html": "app",
+
 		"jade": {
 
 			"root": "dev/jade",
@@ -13,26 +15,6 @@
 			"ui": "dev/jade/ui",
 
 			"unit": "dev/jade/unit"
-
-		},
-
-		"html": "app",
-
-		"sass": {
-
-			"root": "dev/sass",
-
-			"wsk": "dev/sass/web.starter.kit-war.machine",
-
-			"wskf": "dev/sass/web.starter.kit-war.machine_framework",
-
-			"wskf_base": "dev/sass/web.starter.kit-war.machine_framework/base",
-
-			"wskf_component": "dev/sass/web.starter.kit-war.machine_framework/component",
-
-			"wskf_mq": "dev/sass/web.starter.kit-war.machine_framework/media_query",
-
-			"wskf_scaffolding": "dev/sass/web.starter.kit-war.machine_framework/scaffolding"
 
 		},
 
@@ -56,17 +38,21 @@
 
 		},
 
-		"coffeescript": {
+		"sass": {
 
-			"root": "dev/coffeescript",
+			"root": "dev/sass",
 
-			"wsk": "dev/coffeescript/web.starter.kit-war.machine",
+			"wsk": "dev/sass/web.starter.kit-war.machine",
 
-			"wskf": "dev/coffeescript/web.starter.kit-war.machine_framework",
+			"wskf": "dev/sass/web.starter.kit-war.machine_framework",
 
-			"wsk_logic": "dev/coffeescript/web.starter.kit-war.machine/logic",
+			"wskf_base": "dev/sass/web.starter.kit-war.machine_framework/base",
 
-			"wsk_component": "dev/coffeescript/web.starter.kit-war.machine/component"
+			"wskf_component": "dev/sass/web.starter.kit-war.machine_framework/component",
+
+			"wskf_mq": "dev/sass/web.starter.kit-war.machine_framework/media_query",
+
+			"wskf_scaffolding": "dev/sass/web.starter.kit-war.machine_framework/scaffolding"
 
 		},
 
@@ -81,6 +67,20 @@
 			"wsk_logic": "app/public/ajax/lib/js/web.starter.kit-war.machine/logic",
 
 			"wsk_component": "app/public/ajax/lib/js/web.starter.kit-war.machine/component"
+
+		},
+
+		"coffeescript": {
+
+			"root": "dev/coffeescript",
+
+			"wsk": "dev/coffeescript/web.starter.kit-war.machine",
+
+			"wskf": "dev/coffeescript/web.starter.kit-war.machine_framework",
+
+			"wsk_logic": "dev/coffeescript/web.starter.kit-war.machine/logic",
+
+			"wsk_component": "dev/coffeescript/web.starter.kit-war.machine/component"
 
 		},
 
@@ -136,7 +136,7 @@
 
 	},
 
-	"coffee_opts": {
+	"cs_opts": {
 
 		"bare": true
 
