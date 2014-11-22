@@ -62,11 +62,11 @@
 
 			"wsk": "dev/coffeescript/web.starter.kit-war.machine",
 
+			"wskf": "dev/coffeescript/web.starter.kit-war.machine_framework",
+
 			"wsk_logic": "dev/coffeescript/web.starter.kit-war.machine/logic",
 
-			"wsk_component": "dev/coffeescript/web.starter.kit-war.machine/component",
-
-			"wskf": "dev/coffeescript/web.starter.kit-war.machine_framework"
+			"wsk_component": "dev/coffeescript/web.starter.kit-war.machine/component"
 
 		},
 
@@ -76,11 +76,11 @@
 
 			"wsk": "app/public/ajax/lib/js/web.starter.kit-war.machine",
 
+			"wskf": "app/public/ajax/lib/js/web.starter.kit-war.machine_framework",
+
 			"wsk_logic": "app/public/ajax/lib/js/web.starter.kit-war.machine/logic",
 
-			"wsk_component": "app/public/ajax/lib/js/web.starter.kit-war.machine/component",
-
-			"wskf": "app/public/ajax/lib/js/web.starter.kit-war.machine_framework"
+			"wsk_component": "app/public/ajax/lib/js/web.starter.kit-war.machine/component"
 
 		},
 
@@ -110,7 +110,7 @@
 
 	},
 
-	"html_minification_opts": {
+	"html_cmprs_opts": {
 
 		"empty": false,
 
@@ -162,7 +162,7 @@
 
 		"html": "页面预览成功！",
 
-		"minhtml": "HTML 压缩成功！",
+		"html_cmprs": "HTML 压缩成功！",
 
 		"sass": "Sass 任务执行成功！",
 
@@ -172,7 +172,7 @@
 
 		"coffeescript": "CoffeeScript 预处理成功！",
 
-		"js_minification": "JavaScript 压缩成功成功！"
+		"js_cmprs": "JavaScript 压缩成功成功！"
 
 	},
 

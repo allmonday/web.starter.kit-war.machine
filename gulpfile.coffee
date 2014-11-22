@@ -70,7 +70,7 @@
 #
 #	Creation Date: 2014.11.14 11:03 PM ( Tony ).
 #
-#	Last Update: 2014.11.22 01:20 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
+#	Last Update: 2014.11.22 20:42 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
 #
 #	Music ( Custom ): Fireproof (One Direction).mp3    ...//TODO: If you are listenning some music, just write the name of songs.
 #
@@ -135,7 +135,7 @@ config = require('./config.json');
 # @description 配置 Jade 模板引擎预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-jade_channel = lazypipe()
+_jade = lazypipe()
 
 	.pipe $.changed, config.path.html
 
@@ -147,7 +147,7 @@ jade_channel = lazypipe()
 
 	.pipe ->
 
-		$.if __args.minhtml, $.minifyHtml config.html_minification_opts
+		$.if __args.minhtml, $.minifyHtml config.html_cmprs_opts
 
 	.pipe gulp.dest, config.path.html
 
@@ -165,19 +165,19 @@ gulp.task 'jade', ->
 
 	gulp.src config.path.jade.unit + '/*.jade'
 
-	.pipe jade_channel()
+	.pipe _jade()
 
 
 
-# @name html_minification
+# @name html_cmprs
 # @description 配置针对 HTML 文件的处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-gulp.task 'html_minification', ->
+gulp.task 'html_cmprs', ->
 
 	gulp.src config.path.html + '/*.html'
 
-	.pipe $.minifyHtml config.html_minification_opts
+	.pipe $.minifyHtml config.html_cmprs_opts
 
 	.pipe gulp.dest config.path.html
 
@@ -185,15 +185,15 @@ gulp.task 'html_minification', ->
 
 		title: 'html'
 
-	.pipe $.if __args.notify, $.notify config.message.minhtml
+	.pipe $.if __args.notify, $.notify config.message.html_cmprs
 
 
 
-# @name sass_channel
+# @name sass
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_channel = lazypipe()
+_sass = lazypipe()
 
 	.pipe $.changed, config.path.css.root
 
@@ -223,15 +223,15 @@ gulp.task 'sass', ->
 
 	gulp.src config.path.sass.root + '/**/*.sass'
 
-	.pipe sass_channel()
+	.pipe _sass()
 
 
 
-# @name sass
+# @name sass_root
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_root_channel = lazypipe()
+_sass_root = lazypipe()
 
 	.pipe $.changed, config.path.css.root
 
@@ -261,15 +261,15 @@ gulp.task 'sass_root', ->
 
 	gulp.src config.path.sass.root + '/*.sass'
 
-	.pipe sass_root_channel()
+	.pipe _sass_root()
 
 
 
-# @name sass
+# @name sass_wsk
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_wsk_channel = lazypipe()
+_sass_wsk = lazypipe()
 
 	.pipe $.changed, config.path.css.wsk
 
@@ -299,15 +299,15 @@ gulp.task 'sass_wsk', ->
 
 	gulp.src config.path.sass.wsk + '/*.sass'
 
-	.pipe sass_wsk_channel()
+	.pipe _sass_wsk()
 
 
 
-# @name sass
+# @name sass_wskf
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_wskf_channel = lazypipe()
+_sass_wskf = lazypipe()
 
 	.pipe $.changed, config.path.css.wskf
 
@@ -337,15 +337,15 @@ gulp.task 'sass_wskf', ->
 
 	gulp.src config.path.sass.wskf + '/*.sass'
 
-	.pipe sass_wskf_channel()
+	.pipe _sass_wskf()
 
 
 
-# @name sass
+# @name sass_wskf_base
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_wskf_base_channel = lazypipe()
+_sass_wskf_base = lazypipe()
 
 	.pipe $.changed, config.path.css.wskf_base
 
@@ -375,15 +375,15 @@ gulp.task 'sass_wskf_base', ->
 
 	gulp.src config.path.sass.wskf_base + '/*.sass'
 
-	.pipe sass_wskf_base_channel()
+	.pipe _sass_wskf_base()
 
 
 
-# @name sass
+# @name sass_wskf_component
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_wskf_component_channel = lazypipe()
+_sass_wskf_component = lazypipe()
 
 	.pipe $.changed, config.path.css.wskf_component
 
@@ -413,15 +413,15 @@ gulp.task 'sass_wskf_component', ->
 
 	gulp.src config.path.sass.wskf_component + '/*.sass'
 
-	.pipe sass_wskf_component_channel()
+	.pipe _sass_wskf_component()
 
 
 
-# @name sass
+# @name sass_wskf_mq
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_wskf_mq_channel = lazypipe()
+_sass_wskf_mq = lazypipe()
 
 	.pipe $.changed, config.path.css.wskf_mq
 
@@ -451,7 +451,7 @@ gulp.task 'sass_wskf_mq', ->
 
 	gulp.src config.path.sass.wskf_mq + '/*.sass'
 
-	.pipe sass_wskf_mq_channel()
+	.pipe _sass_wskf_mq()
 
 
 
@@ -459,7 +459,7 @@ gulp.task 'sass_wskf_mq', ->
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-sass_wskf_scaffolding_channel = lazypipe()
+_sass_wskf_scaffolding = lazypipe()
 
 	.pipe $.changed, config.path.css.wskf_scaffolding
 
@@ -489,11 +489,11 @@ gulp.task 'sass_wskf_scaffolding', ->
 
 	gulp.src config.path.sass.wskf_scaffolding + '/*.sass'
 
-	.pipe sass_wskf_scaffolding_channel()
+	.pipe _sass_wskf_scaffolding()
 
 
 
-# @name css_csso
+# @name css_uncss
 # @description 配置针对 HTML 文件的处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
@@ -563,7 +563,7 @@ gulp.task 'css_csso', ->
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-coffeescript_channel = lazypipe()
+_cs = lazypipe()
 
 	.pipe $.changed, config.path.javascript.root
 
@@ -593,15 +593,15 @@ gulp.task 'coffeescript', ->
 
 	gulp.src config.path.coffeescript.root + '/**/*.coffee'
 
-	.pipe coffeescript_channel()
+	.pipe _cs()
 
 
 
-# @name coffeescript
+# @name coffeescript_wsk
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-coffeescript_wsk_channel = lazypipe()
+_cs_wsk = lazypipe()
 
 	.pipe $.changed, config.path.javascript.wsk
 
@@ -631,15 +631,15 @@ gulp.task 'coffeescript_wsk', ->
 
 	gulp.src config.path.coffeescript.wsk + '/*.coffee'
 
-	.pipe coffeescript_wsk_channel()
+	.pipe _cs_wsk()
 
 
 
-# @name coffeescript
+# @name coffeescript_wskf
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-coffeescript_wskf_channel = lazypipe()
+_cs_wskf = lazypipe()
 
 	.pipe $.changed, config.path.javascript.wskf
 
@@ -669,15 +669,15 @@ gulp.task 'coffeescript_wskf', ->
 
 	gulp.src config.path.coffeescript.wskf + '/*.coffee'
 
-	.pipe coffeescript_wskf_channel()
+	.pipe _cs_wskf()
 
 
 
-# @name coffeescript
+# @name coffeescript_wsk_logic
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-coffeescript_wsk_logic_channel = lazypipe()
+_cs_wsk_logic = lazypipe()
 
 	.pipe $.changed, config.path.javascript.wsk_logic
 
@@ -707,7 +707,7 @@ gulp.task 'coffeescript_wsk_logic', ->
 
 	gulp.src config.path.coffeescript.wsk_logic + '/*.coffee'
 
-	.pipe coffeescript_wsk_logic_channel()
+	.pipe _cs_wsk_logic()
 
 
 
@@ -716,7 +716,7 @@ gulp.task 'coffeescript_wsk_logic', ->
 # @name coffeescript
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-coffeescript_component_channel = lazypipe()
+_cs_component = lazypipe()
 
 	.pipe $.changed, config.path.javascript.wsk_component
 
@@ -746,15 +746,15 @@ gulp.task 'coffeescript_component', ->
 
 	gulp.src config.path.coffeescript.wsk_component + '/*.coffee'
 
-	.pipe coffeescript_component_channel()
+	.pipe _cs_component()
 
 
 
-# @name js_minification
+# @name js_cmprs
 # @description 配置针对 HTML 文件的处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-gulp.task 'js_minification', ->
+gulp.task 'js_cmprs', ->
 
 	gulp.src [
 
@@ -772,7 +772,7 @@ gulp.task 'js_minification', ->
 
 		title: 'javascript'
 
-	.pipe $.if __args.notify, $.notify config.message.js_minification
+	.pipe $.if __args.notify, $.notify config.message.js_cmprs
 
 
 
@@ -780,7 +780,7 @@ gulp.task 'js_minification', ->
 # @description 配置针对 HTML 文件的处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-html_changed_channel = lazypipe()
+_html_changed = lazypipe()
 
 	.pipe $.connect.reload
 
@@ -794,7 +794,7 @@ gulp.task 'html_changed', ->
 
 		base: config.path.html
 
-	.pipe html_changed_channel()
+	.pipe _html_changed()
 
 
 
@@ -802,7 +802,7 @@ gulp.task 'html_changed', ->
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-css_changed_channel = lazypipe()
+_css_changed = lazypipe()
 
 	.pipe $.connect.reload
 
@@ -810,7 +810,7 @@ gulp.task 'css_changed', ->
 
 	gulp.src config.path.css.root + '/**/*.css'
 
-	.pipe css_changed_channel()
+	.pipe _css_changed()
 
 
 
@@ -818,7 +818,7 @@ gulp.task 'css_changed', ->
 # @description
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
-js_changed_channel = lazypipe()
+_js_changed = lazypipe()
 
 	.pipe $.connect.reload
 
@@ -830,7 +830,7 @@ gulp.task 'js_changed', ->
 
 	_mrg_src = mrg js_self, js_self_framework
 
-	_mrg_src.pipe js_changed_channel()
+	_mrg_src.pipe _js_changed()
 
 
 
@@ -888,58 +888,6 @@ gulp.task 'connect', ->
 		port: config.preview.port
 
 		livereload: config.preview.livereload
-
-
-
-# @name serve
-# @description 创建并配置 HTTP 服务器以供预览或实时预览。
-# @author 沈维忠 ( Shen Weizhong / Tony Stark )
-
-gulp.task 'serve', ->
-
-	browserSync
-
-		logPrefix: 'Tony_Stark'
-
-		open: true
-
-		server:
-
-			baseDir: 'app'
-
-			index: 'index.html'
-
-			middleware: (req, res, next) ->
-
-				console.log 'Hi from middleware'
-
-				next()
-
-				return
-
-		port: 9022
-
-		notify: false
-
-	, (err, bs) ->
-
-		if !err
-
-			console.log 'BrowserSync is ready!'
-
-		else
-
-			console.log 'Fuck No!'
-
-		return
-
-	gulp.watch ['*.html'],
-
-		cwd: 'app'
-
-	, reload
-
-	return
 
 
 
@@ -1053,24 +1001,6 @@ gulp.task 'watch', ->
 
 
 
-# @name contributors
-# @description 将所有贡献者罗列在 README.md 文件中。
-# @example
-# $ gulp contributors
-# @author 沈维忠 ( Shen Weizhong / Tony Stark )
-
-gulp.task 'contributors', ->
-
-	gulp.src 'README.md'
-
-	.pipe $.plumber()
-
-	.pipe $.contribs '##贡献者清单', '##许可证'
-
-	.pipe gulp.dest './'
-
-
-
 # @name default
 # @description 运行 " gulp " 命令时默认执行的任务。
 # @example
@@ -1100,6 +1030,6 @@ gulp.task 'default', (cb) ->
 
 gulp.task 'cmprs', (cb) ->
 
-	run_sequence 'css_uncss', ['html_minification', 'css_csso', 'js_minification'], cb
+	run_sequence 'css_uncss', ['html_cmprs', 'css_csso', 'js_cmprs'], cb
 
 	return
