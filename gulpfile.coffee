@@ -70,7 +70,7 @@
 #
 #	Creation Date: 2014.11.14 11:03 PM ( Tony ).
 #
-#	Last Update: 2014.11.22 20:42 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
+#	Last Update: 2014.11.23 06:40 PM ( Tony ).    ...//TODO: Update the 'Last Update'.
 #
 #	Music ( Custom ): Fireproof (One Direction).mp3    ...//TODO: If you are listenning some music, just write the name of songs.
 #
@@ -95,7 +95,7 @@ run_sequence = require 'run-sequence'
 $            = require('gulp-load-plugins')()
 
 # @description
-# 从命令行传输参数。
+# 从命令行为相关任务传输参数。
 # @example
 # // gulp smaple_task --env dev
 # // gulp sample_task --cmprs
@@ -104,7 +104,7 @@ $            = require('gulp-load-plugins')()
 #     gulp.src 'sample_path'
 #     .pipe $.if __args.env is 'dev', $.notify 'task!'
 #     .pipe $.if __args.cmprs, $.notify 'compressed!'
-#     return
+# @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 __args = parse_args process.argv.slice(2),
 
@@ -118,21 +118,56 @@ __args = parse_args process.argv.slice(2),
 
 # @description
 # " config.preview " 设定预览、实时预览所需要的参数。 " config.path "
-# 设定常用相关文件夹、文件的相对路径。
+# 设定常用相关文件夹、文件的相对路径...
 # 将所有选项放置在单独的 " config.json " 文件里是有益的，这可以让构建任
 # 务内容更清晰，而且也可以被别的构建工具比如 " Grunt " 使用。
-# （ you can find the reson why I write
+# （ 关于 config.sass_opts，这儿有个小贴士：you can find the reson why I write
 # " 'sourcemap=none': true " here, not " sourcemap: false ",
 # https://github.com/sindresorhus/gulp-ruby-sass/issues/113#issuecomment-53778451 ）
-#
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 config = require('./config.json');
 
 
 
+# @name html_size
+# @description 输出 HTML 文件的体积（容量）。
+# @author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+html_size = lazypipe()
+
+	.pipe ->
+
+		$.if __args.size, $.if '*.html', $.size title: 'html'
+
+
+
+# @name css_size
+# @description 输出 CSS 文件的体积（容量）。
+# @author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+css_size = lazypipe()
+
+	.pipe ->
+
+		$.if __args.size, $.if '*.css', $.size title: 'css'
+
+
+
+# @name js_size
+# @description 输出 JS 文件的体积（容量）。
+# @author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+js_size = lazypipe()
+
+	.pipe ->
+
+		$.if __args.size, $.if '*.js', $.size title: 'javascript'
+
+
+
 # @name jade
-# @description 配置 Jade 模板引擎预处理任务。
+# @description 配置 Jade （模板引擎）预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _jade = lazypipe()
@@ -151,11 +186,7 @@ _jade = lazypipe()
 
 	.pipe gulp.dest, config.path.html
 
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'html'
+	.pipe html_size
 
 	.pipe ->
 
@@ -169,28 +200,8 @@ gulp.task 'jade', ->
 
 
 
-# @name html_cmprs
-# @description 配置针对 HTML 文件的处理任务。
-# @author 沈维忠 ( Shen Weizhong / Tony Stark )
-
-gulp.task 'html_cmprs', ->
-
-	gulp.src config.path.html + '/*.html'
-
-	.pipe $.minifyHtml config.html_cmprs_opts
-
-	.pipe gulp.dest config.path.html
-
-	.pipe $.if __args.size, $.size
-
-		title: 'html'
-
-	.pipe $.if __args.notify, $.notify config.message.html_cmprs
-
-
-
 # @name sass
-# @description
+# @description 配置针对指定目录下多个层级目录中的 SASS （预编辑）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass = lazypipe()
@@ -209,15 +220,11 @@ _sass = lazypipe()
 
 	.pipe gulp.dest, config.path.css.root
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass', ->
 
@@ -228,7 +235,7 @@ gulp.task 'sass', ->
 
 
 # @name sass_root
-# @description
+# @description 配置针对指定目录下的 SASS （预处理）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass_root = lazypipe()
@@ -247,15 +254,11 @@ _sass_root = lazypipe()
 
 	.pipe gulp.dest, config.path.css.root
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass_root', ->
 
@@ -266,7 +269,7 @@ gulp.task 'sass_root', ->
 
 
 # @name sass_wsk
-# @description
+# @description 配置针对指定目录下的 SASS （预处理）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass_wsk = lazypipe()
@@ -285,15 +288,11 @@ _sass_wsk = lazypipe()
 
 	.pipe gulp.dest, config.path.css.wsk
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass_wsk', ->
 
@@ -304,7 +303,7 @@ gulp.task 'sass_wsk', ->
 
 
 # @name sass_wskf
-# @description
+# @description 配置针对指定目录下的 SASS （预处理）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass_wskf = lazypipe()
@@ -323,15 +322,11 @@ _sass_wskf = lazypipe()
 
 	.pipe gulp.dest, config.path.css.wskf
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass_wskf', ->
 
@@ -342,7 +337,7 @@ gulp.task 'sass_wskf', ->
 
 
 # @name sass_wskf_base
-# @description
+# @description 配置针对指定目录下的 SASS （预处理）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass_wskf_base = lazypipe()
@@ -361,15 +356,11 @@ _sass_wskf_base = lazypipe()
 
 	.pipe gulp.dest, config.path.css.wskf_base
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass_wskf_base', ->
 
@@ -380,7 +371,7 @@ gulp.task 'sass_wskf_base', ->
 
 
 # @name sass_wskf_component
-# @description
+# @description 配置针对指定目录下的 SASS （预处理）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass_wskf_component = lazypipe()
@@ -399,15 +390,11 @@ _sass_wskf_component = lazypipe()
 
 	.pipe gulp.dest, config.path.css.wskf_component
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass_wskf_component', ->
 
@@ -418,7 +405,7 @@ gulp.task 'sass_wskf_component', ->
 
 
 # @name sass_wskf_mq
-# @description
+# @description 配置针对指定目录下的 SASS （预处理）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass_wskf_mq = lazypipe()
@@ -437,15 +424,11 @@ _sass_wskf_mq = lazypipe()
 
 	.pipe gulp.dest, config.path.css.wskf_mq
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass_wskf_mq', ->
 
@@ -456,7 +439,7 @@ gulp.task 'sass_wskf_mq', ->
 
 
 # @name sass_wskf_scaffolding
-# @description
+# @description 配置针对指定目录下的 SASS （预处理）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _sass_wskf_scaffolding = lazypipe()
@@ -475,15 +458,11 @@ _sass_wskf_scaffolding = lazypipe()
 
 	.pipe gulp.dest, config.path.css.wskf_scaffolding
 
+	.pipe css_size
+
 	.pipe ->
 
 		$.if __args.notify, $.notify config.message.sass
-
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'css'
 
 gulp.task 'sass_wskf_scaffolding', ->
 
@@ -493,74 +472,8 @@ gulp.task 'sass_wskf_scaffolding', ->
 
 
 
-# @name css_uncss
-# @description 配置针对 HTML 文件的处理任务。
-# @author 沈维忠 ( Shen Weizhong / Tony Stark )
-
-gulp.task 'css_uncss', () ->
-
-	# UNCSS
-
-	gulp.src [
-
-		config.path.css.root + '/**/*.css'
-
-		config.path.css.bower + '/**/*.css'
-
-	]
-
-	.pipe $.uncss
-
-		html: glob.sync config.path.html + '/*.html'
-
-	.pipe gulp.dest config.path.css.root
-
-	.pipe $.if __args.size, $.size
-
-		title: 'css'
-
-	.pipe $.if __args.notify, $.notify config.message.css_uncss
-
-
-
-# @name css_csso
-# @description 配置针对 HTML 文件的处理任务。
-# @author 沈维忠 ( Shen Weizhong / Tony Stark )
-
-gulp.task 'css_csso', ->
-
-	# CSSO
-
-	css_self = gulp.src config.path.css.wsk + '/**/*.css'
-
-	.pipe $.csso()
-
-	.pipe gulp.dest config.path.css.wsk
-
-	.pipe $.if __args.size, $.size
-
-		title: 'css'
-
-	.pipe $.if __args.notify, $.notify config.message.css_csso
-
-	css_framework = gulp.src config.path.css.wskf + '/**/*.css'
-
-	.pipe $.csso()
-
-	.pipe gulp.dest config.path.css.wskf
-
-	.pipe $.if __args.size, $.size
-
-		title: 'css'
-
-	.pipe $.if __args.notify, $.notify config.message.css_csso
-
-	mrg_src = mrg css_self, css_framework
-
-
-
 # @name coffeescript
-# @description
+# @description 配置针对指定目录下多个层级目录中的 Coffeescript （预编辑）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _cs = lazypipe()
@@ -569,7 +482,7 @@ _cs = lazypipe()
 
 	.pipe $.plumber
 
-	.pipe $.coffee, config.coffee_opts
+	.pipe $.coffee, config.cs_opts
 
 	.pipe gulp.dest, config.path.javascript.root
 
@@ -579,11 +492,7 @@ _cs = lazypipe()
 
 	.pipe gulp.dest, config.path.javascript.root
 
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'javascript'
+	.pipe js_size
 
 	.pipe ->
 
@@ -598,7 +507,7 @@ gulp.task 'coffeescript', ->
 
 
 # @name coffeescript_wsk
-# @description
+# @description 配置针对指定目录下的 Coffeescript （预编辑）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _cs_wsk = lazypipe()
@@ -607,7 +516,7 @@ _cs_wsk = lazypipe()
 
 	.pipe $.plumber
 
-	.pipe $.coffee, config.coffee_opts
+	.pipe $.coffee, config.cs_opts
 
 	.pipe gulp.dest, config.path.javascript.wsk
 
@@ -617,11 +526,7 @@ _cs_wsk = lazypipe()
 
 	.pipe gulp.dest, config.path.javascript.wsk
 
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'javascript'
+	.pipe js_size
 
 	.pipe ->
 
@@ -636,7 +541,7 @@ gulp.task 'coffeescript_wsk', ->
 
 
 # @name coffeescript_wskf
-# @description
+# @description 配置针对指定目录下的 Coffeescript （预编辑）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _cs_wskf = lazypipe()
@@ -645,7 +550,7 @@ _cs_wskf = lazypipe()
 
 	.pipe $.plumber
 
-	.pipe $.coffee, config.coffee_opts
+	.pipe $.coffee, config.cs_opts
 
 	.pipe gulp.dest, config.path.javascript.wskf
 
@@ -655,11 +560,7 @@ _cs_wskf = lazypipe()
 
 	.pipe gulp.dest, config.path.javascript.wskf
 
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'javascript'
+	.pipe js_size
 
 	.pipe ->
 
@@ -674,7 +575,7 @@ gulp.task 'coffeescript_wskf', ->
 
 
 # @name coffeescript_wsk_logic
-# @description
+# @description 配置针对指定目录下的 Coffeescript （预编辑）文件的预处理任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _cs_wsk_logic = lazypipe()
@@ -683,7 +584,7 @@ _cs_wsk_logic = lazypipe()
 
 	.pipe $.plumber
 
-	.pipe $.coffee, config.coffee_opts
+	.pipe $.coffee, config.cs_opts
 
 	.pipe gulp.dest, config.path.javascript.wsk_logic
 
@@ -693,11 +594,7 @@ _cs_wsk_logic = lazypipe()
 
 	.pipe gulp.dest, config.path.javascript.wsk_logic
 
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'javascript'
+	.pipe js_size
 
 	.pipe ->
 
@@ -712,7 +609,7 @@ gulp.task 'coffeescript_wsk_logic', ->
 
 
 # @name coffeescript_component
-# @description
+# @description 配置针对指定目录下的 Coffeescript （预编辑）文件的预处理任务。
 # @name coffeescript
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
@@ -722,7 +619,7 @@ _cs_component = lazypipe()
 
 	.pipe $.plumber
 
-	.pipe $.coffee, config.coffee_opts
+	.pipe $.coffee, config.cs_opts
 
 	.pipe gulp.dest, config.path.javascript.wsk_component
 
@@ -732,11 +629,7 @@ _cs_component = lazypipe()
 
 	.pipe gulp.dest, config.path.javascript.wsk_component
 
-	.pipe ->
-
-		$.if __args.size, $.size
-
-			title: 'javascript'
+	.pipe js_size
 
 	.pipe ->
 
@@ -750,9 +643,117 @@ gulp.task 'coffeescript_component', ->
 
 
 
-# @name js_cmprs
-# @description 配置针对 HTML 文件的处理任务。
+# @name html_cmprs
+# @description 配置针对 HTML 文件的压缩（处理）任务。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+_html_cmprs = lazypipe()
+
+	.pipe $.minifyHtml, config.html_cmprs_opts
+
+	.pipe gulp.dest, config.path.html
+
+	.pipe html_size
+
+	.pipe ->
+
+		$.if __args.notify, $.notify config.message.html_cmprs
+
+gulp.task 'html_cmprs', ->
+
+	gulp.src config.path.html + '/*.html'
+
+	.pipe _html_cmprs()
+
+
+
+# @name css_uncss
+# @description 根据当前项目中所有 HTML 文件对样式表的依赖情况进行样式表方面的 " 瘦身 " 优化。
+# @author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+_css_uncss = lazypipe()
+
+	.pipe $.uncss, html: glob.sync config.path.html + '/*.html'
+
+	.pipe gulp.dest, config.path.css.root
+
+	.pipe css_size
+
+	.pipe ->
+
+		$.if __args.notify, $.notify config.message.css_uncss
+
+gulp.task 'css_uncss', () ->
+
+	gulp.src [
+
+		config.path.css.root + '/**/*.css'
+
+		config.path.css.bower + '/**/*.css'
+
+	]
+
+	.pipe _css_uncss()
+
+
+
+# @name css_csso
+# @description 对指定目录下 CSS 样式表文件进行结构性的优化以跟深层次压缩体积。
+# @author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+_csso_self = lazypipe()
+
+	.pipe $.csso
+
+	.pipe gulp.dest, config.path.css.wsk
+
+	.pipe css_size
+
+	.pipe ->
+
+		$.if __args.notify, $.notify config.message.css_csso
+
+_csso_framework = lazypipe()
+
+	.pipe $.csso
+
+	.pipe gulp.dest, config.path.css.wskf
+
+	.pipe css_size
+
+	.pipe ->
+
+		$.if __args.notify, $.notify config.message.css_csso
+
+gulp.task 'css_csso', ->
+
+	css_self = gulp.src config.path.css.wsk + '/**/*.css'
+
+	.pipe _csso_self()
+
+	css_framework = gulp.src config.path.css.wskf + '/**/*.css'
+
+	.pipe _csso_framework()
+
+	mrg_src = mrg css_self, css_framework
+
+
+
+# @name js_cmprs
+# @description 配置针对指定目录下多个层级目录中的  JavaScript 文件的压缩（处理）任务。
+# @author 沈维忠 ( Shen Weizhong / Tony Stark )
+
+_js_cmprs = lazypipe()
+
+	.pipe $.uglify
+
+	.pipe gulp.dest, config.path.javascript.wsk
+
+	.pipe js_size
+
+	.pipe ->
+
+		$.if __args.notify, $.notify config.message.js_cmprs
 
 gulp.task 'js_cmprs', ->
 
@@ -764,20 +765,12 @@ gulp.task 'js_cmprs', ->
 
 	]
 
-	.pipe $.uglify()
-
-	.pipe gulp.dest config.path.javascript.wsk
-
-	.pipe $.if __args.size, $.size
-
-		title: 'javascript'
-
-	.pipe $.if __args.notify, $.notify config.message.js_cmprs
+	.pipe _js_cmprs()
 
 
 
 # @name html_changed
-# @description 配置针对 HTML 文件的处理任务。
+# @description 指定目录下 HTML 文件发生变动后要执行的操作。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _html_changed = lazypipe()
@@ -799,7 +792,7 @@ gulp.task 'html_changed', ->
 
 
 # @name css_changed
-# @description
+# @description 指定目录下包括其下多个层级目录中的 CSS 文件发生变动后要执行的操作。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _css_changed = lazypipe()
@@ -815,7 +808,7 @@ gulp.task 'css_changed', ->
 
 
 # @name js_changed
-# @description
+# @description 指定目录下包括其下多个层级目录中的 JavaScript 文件发生变动后要执行的操作。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 _js_changed = lazypipe()
@@ -860,7 +853,7 @@ gulp.task 'manifest', ->
 
 
 # @name open
-# @description 从命令行打开浏览器并访问给定地址。
+# @description 从命令行界面打开浏览器并访问给定地址。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 gulp.task 'open', ->
@@ -892,7 +885,7 @@ gulp.task 'connect', ->
 
 
 # @name html
-# @description 监听指定类型文件、活动。
+# @description 监听（监视）指定目录下（或包括其下多个层级目录中）的相关类型文件的（认为或机器）修改行为（活动）。
 # @author 沈维忠 ( Shen Weizhong / Tony Stark )
 
 gulp.task 'watch', ->
@@ -1002,7 +995,7 @@ gulp.task 'watch', ->
 
 
 # @name default
-# @description 运行 " gulp " 命令时默认执行的任务。
+# @description 运行 " gulp " 命令时默认执行的任务。可添加参数 "--p" 以附加相关操作任务。
 # @example
 # $ gulp
 # $ gulp -p
