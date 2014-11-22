@@ -114,8 +114,6 @@
 
 		"gulp-notify": "^2.0.1",
 
-		"gulp-contribs": "^0.0.2",
-
 		"gulp-load-plugins": "^0.7.1"
 
 	},
