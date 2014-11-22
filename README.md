@@ -141,16 +141,16 @@ bower --version
 + [*CoffeeScript 指南*]( '点击 · Click')
 
 > 参阅
- *《[GitHub's CSS](http://markdotto.com/2014/07/23/githubs-css/ '点击 · Click')》*,
- *《[Refining The Way We Structure Our CSS At Trello](http://blog.trello.com/refining-the-way-we-structure-our-css-at-trello/ '点击 · Click')》*,
- *《[Medium’s CSS is actually pretty f***ing good.](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06 '点击 · Click')》*,
- *《[CodePen's CSS](http://codepen.io/chriscoyier/blog/codepens-css '点击 · Click')》*,
- *《[CSS at Lonely Planet](http://ianfeather.co.uk/css-at-lonely-planet/ '点击 · Click')》*,
- *《[Buffer’s CSS](http://blog.brianlovin.com/buffers-css/ '点击 · Click')》*,
- *《[CSS at Groupon](http://mikeaparicio.com/2014/08/10/css-at-groupon/ '点击 · Click')》*,
- *《[CSS Guidelines](http://cssguidelin.es/ '点击 · Click')》*,
- *《[How we do CSS at Ghost](http://dev.ghost.org/css-at-ghost/ '点击 · Click')》*,
- *《[Website Style Guide Resources](http://styleguides.io/ '点击 · Click'》*)
+ *《 [GitHub's CSS](http://markdotto.com/2014/07/23/githubs-css/ '点击 · Click') 》*,
+ *《 [Refining The Way We Structure Our CSS At Trello](http://blog.trello.com/refining-the-way-we-structure-our-css-at-trello/ '点击 · Click') 》*,
+ *《 [Medium’s CSS is actually pretty f***ing good.](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06 '点击 · Click') 》*,
+ *《 [CodePen's CSS](http://codepen.io/chriscoyier/blog/codepens-css '点击 · Click') 》*,
+ *《 [CSS at Lonely Planet](http://ianfeather.co.uk/css-at-lonely-planet/ '点击 · Click') 》*,
+ *《 [Buffer’s CSS](http://blog.brianlovin.com/buffers-css/ '点击 · Click') 》*,
+ *《 [CSS at Groupon](http://mikeaparicio.com/2014/08/10/css-at-groupon/ '点击 · Click') 》*,
+ *《 [CSS Guidelines](http://cssguidelin.es/ '点击 · Click') 》*,
+ *《 [How we do CSS at Ghost](http://dev.ghost.org/css-at-ghost/ '点击 · Click') 》*,
+ *《 [Website Style Guide Resources](http://styleguides.io/ '点击 · Click') 》*
 
 
 
@@ -221,7 +221,7 @@ gulp -p
 
 > 使用 `SASS` 预处理输出的 `CSS` 文件为被压缩的状态，可在上述 **两项** 命令后添加 `--csso` 参数，
 实时输出再被优化（[*CSSO*](https://github.com/css/csso '点击 · Click')）后的 `CSS` 文件。
-（参阅：*《[Description of CSSO](http://bem.info/tools/optimizers/csso/description/ '点击 · Click')》*）
+（参阅：*《 [Description of CSSO](http://bem.info/tools/optimizers/csso/description/ '点击 · Click') 》*）
 
 ```bash
 gulp cmprs
@@ -295,7 +295,7 @@ sudo bower install
 gulp
 ```
 
-接下来也许（或不）你会需要阅读 *《[如何协作 & 贡献]( '点击 · Click')》* ！^_^
+接下来也许（或不）你会需要阅读 *《 [如何协作 & 贡献]( '点击 · Click') 》* ！^_^
 
 
 
